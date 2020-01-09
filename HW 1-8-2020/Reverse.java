@@ -35,7 +35,9 @@ public class Reverse
     }
 
     public String[] loadArray(){
-        String[] result = {randomStringGen(), randomStringGen(), randomStringGen(), randomStringGen(), randomStringGen(), randomStringGen(), randomStringGen(), randomStringGen(), randomStringGen(), randomStringGen()};
+        String[] result = new String[10];
+        for(int i = 0; i < 10; i++)
+            result[i] = randomStringGen();
         return result;
     }
 
@@ -56,9 +58,9 @@ public class Reverse
     public String randomStringGen(){
         int leftLimit = 97; // letter 'a'
         int rightLimit = 122; // letter 'z'
-        Random random = new Random();
-        int targetStringLength = random.nextInt(9) + 1;
-        String generatedString = random.ints(leftLimit, rightLimit + 1)
+        Random r = new Random();
+        int targetStringLength = r.nextInt(9) + 1;
+        String generatedString = r.ints(leftLimit, rightLimit + 1)
             .limit(targetStringLength)
             .collect(StringBuilder::new, StringBuilder::appendCodePoint, StringBuilder::append)
             .toString();
