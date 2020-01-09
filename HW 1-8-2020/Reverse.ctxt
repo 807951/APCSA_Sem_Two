@@ -1,0 +1,19 @@
+#BlueJ class context
+comment0.target=Reverse
+comment1.params=
+comment1.target=Reverse()
+comment2.params=list
+comment2.target=java.util.ArrayList\ reverseList(java.util.ArrayList)
+comment3.params=arr
+comment3.target=void\ printArray(java.lang.String[])
+comment4.params=
+comment4.target=java.lang.String[]\ loadArray()
+comment5.params=
+comment5.target=java.util.ArrayList\ loadArrayList()
+comment6.params=list
+comment6.target=java.lang.String[]\ reverseArr(java.lang.String[])
+comment7.params=
+comment7.target=java.lang.String\ randomStringGen()
+comment8.params=args
+comment8.target=void\ main(java.lang.String[])
+numComments=9
