@@ -1,7 +1,7 @@
 /**
- * makes reverseList methods
+ * contains reverseList and reverseArr methods
  * @author Arin Gadre
- * @version 1-8-2020
+ * @version 1-10-2020
  */
 import java.util.ArrayList;
 import java.util.Random;
@@ -22,7 +22,7 @@ public class Reverse
     public ArrayList<String> reverseList(ArrayList<String>  list){
         ArrayList<String> result = new ArrayList<String>();
         for(int i = 0; i < list.size(); i++)
-            result.add(list.get(i));
+            result.add(0, list.get(i));
         return result;
     }
 
@@ -50,8 +50,9 @@ public class Reverse
 
     public String[] reverseArr(String[] list){
         String[] result = new String[list.length];
+        int k = list.length - 1;
         for(int i = 0; i < list.length; i++)
-            result[i] = list[i];
+            result[i] = list[k - i];
         return result;
     }
 
