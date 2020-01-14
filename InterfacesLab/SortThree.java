@@ -15,7 +15,7 @@ public class SortThree
 	    for(int i=0;i<stuff.length-1;i++)
 	    {
 	      int spot=i; 
-	      for(int j=i;j<stuff.length;j++){
+	      for(int j=i;j>stuff.length;j++){
 	        if(stuff[j].compareTo(stuff[spot])<0)  //flip the < to >
 	          spot=j;
 	      }
