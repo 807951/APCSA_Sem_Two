@@ -5,7 +5,7 @@
 
 import static java.lang.System.*;
 
-class Monster
+public class Monster
 {
    private String myName;
    private static int count = 0;   //all Monsters share this var
