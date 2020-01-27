@@ -58,7 +58,11 @@ public class CelebrityGame
      */
     public void play()
     {
-
+        if (celebGameList != null && celebGameList.size() > 0)
+        {
+            this.gameCelebrity = celebGameList.get(0);
+            gameWindow.replaceScreen("GAME");
+        }
     }
 
     /**
@@ -73,7 +77,7 @@ public class CelebrityGame
      */
     public void addCelebrity(String name, String guess, String type)
     {
-
+        celebGameList.add(new Celebrity(name, guess));
     }
 
     /**
@@ -97,7 +101,9 @@ public class CelebrityGame
      */
     public boolean validateClue(String clue, String type)
     {
-       return false;
+        if(clue.trim().length() >= 10)
+            return true;
+        return false;
     }
 
     /**

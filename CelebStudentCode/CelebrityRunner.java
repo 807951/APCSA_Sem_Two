@@ -1,3 +1,4 @@
+import javax.swing.JFrame;
 /**
  * Starts the Celebrity Game application
  * @author cody.henrichsen
@@ -5,12 +6,16 @@
  */
 public class CelebrityRunner
 {
-	/**
-	 * The entry point of the Java application.
-	 * @param args Unused parameter as it is a GUI based program.
-	 */
-	public static void main(String [] args)
-	{
-
-	}
+    /**
+     * The entry point of the Java application.
+     * @param args Unused parameter as it is a GUI based program.
+     */
+    public static void main(String [] args)
+    {
+        CelebrityGame cb = new CelebrityGame();
+        StartPanel sp = new StartPanel(cb);
+        CelebrityFrame cf = new CelebrityFrame(cb);
+        cb.prepareGame();
+        cb.play();
+    }
 }
