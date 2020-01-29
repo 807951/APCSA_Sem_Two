@@ -1,6 +1,5 @@
 #BlueJ class context
 comment0.target=Celebrity
-comment0.text=\r\n\ Celebrity\ base\ class\ for\ the\ Celebrity\ game.\r\n\ @author\ cody.henrichsen\r\n\ @version\ 1.4\ 17/09/2018\r\n
 comment1.params=answer\ clue
 comment1.target=Celebrity(java.lang.String,\ java.lang.String)
 comment1.text=\r\n\ Creates\ a\ Celebrity\ instance\ with\ the\ supplied\ answer\ and\ clue\r\n\ @param\ answer\r\n\ @param\ clue\r\n

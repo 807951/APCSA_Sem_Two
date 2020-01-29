@@ -1,0 +1,19 @@
+#BlueJ class context
+comment0.target=VideoGameCelebrity
+comment0.text=\r\n\ celebrity\ from\ a\ video\ game\ class\ that\ extends\ Celebrity\r\n\ @author\ (Arin\ Gadre)\r\n\ @version\ (1-29-2020)\r\n
+comment1.params=answer\ clue\ game
+comment1.target=VideoGameCelebrity(java.lang.String,\ java.lang.String,\ java.lang.String)
+comment1.text=\r\n\ Creates\ a\ video\ game\ Celebrity\ instance\ with\ the\ supplied\ answer\ and\ clue\r\n\ @param\ name\ -\ name\ of\ the\ video\ game\ celebrity\r\n\ @param\ clue\ -\ a\ clue\ about\ the\ video\ game\ celebrity\r\n
+comment2.params=
+comment2.target=java.lang.String\ toString()
+comment2.text=\r\n\ String\ representation\ of\ the\ video\ game\ celebrity\r\n
+comment3.params=show
+comment3.target=void\ setGame(java.lang.String)
+comment3.text=\r\n\ Mutator\ for\ updating\ the\ game\r\n\ @param\ game\ -\ the\ replacement\ game\ that\ the\ celebrity\ comes\ from\r\n
+comment4.params=
+comment4.target=java.lang.String\ getGame()
+comment4.text=\r\n\ Returns\ the\ game\ in\ which\ the\ cartoon\ character\ appeared\r\n\ @return\ game\r\n
+comment5.params=
+comment5.target=java.lang.String\ getClue()
+comment5.text=\r\n\ randomly\ returns\ either\ the\ clue\ (65%\ of\ the\ time)\ or\ the\ game\ (35%\ of\ the\ time)\r\n
+numComments=6

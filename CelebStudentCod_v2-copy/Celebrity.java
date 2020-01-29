@@ -1,8 +1,3 @@
-/**
- * Celebrity base class for the Celebrity game.
- * @author cody.henrichsen
- * @version 1.4 17/09/2018
- */
 public class Celebrity
 {
     /**
@@ -51,7 +46,6 @@ public class Celebrity
         this.clue = clue;
     }
 
-    /**
      * Updates the answer to the provided String.
      * @param answer The new answer.
      */
@@ -66,7 +60,7 @@ public class Celebrity
     @Override
     public String toString()
     {
-        return "This celebrity's name is " + getAnswer() + " and their clue is " + getClue();
+        return null;
     }
 
 }

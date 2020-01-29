@@ -1,3 +1,5 @@
+//package gui;
+
 import java.util.ArrayList;
 
 /**
@@ -11,15 +13,18 @@ public class CelebrityGame
     /**
      * A reference to a Celebrity or subclass instance.
      */
-    Celebrity gameCelebrity;
+    private Celebrity gameCelebrity;
+
     /**
      * The GUI frame for the Celebrity game.
      */
     private CelebrityFrame gameWindow;
+
     /**
      * The ArrayList of Celebrity values that make up the game
      */
     private ArrayList<Celebrity> celebGameList;
+
     /**
      * Builds the game and starts the GUI
      */
@@ -27,6 +32,7 @@ public class CelebrityGame
     {
         celebGameList = new ArrayList<Celebrity>();
         gameWindow = new CelebrityFrame(this);
+        prepareGame();
     }
 
     /**
@@ -48,7 +54,28 @@ public class CelebrityGame
      */
     public boolean processGuess(String guess)
     {
-        return false;
+        boolean matches = false;
+
+        /*
+         * Why use the .trim() method on the supplied String parameter? What
+         * would need to be done to support a score?
+         */
+        if (guess.trim().equalsIgnoreCase(gameCelebrity.getAnswer()))
+        {
+            matches = true;
+            celebGameList.remove(0);
+            if (celebGameList.size() > 0)
+            {
+                gameCelebrity = celebGameList.get(0);
+            }
+            else
+            {
+                gameCelebrity = new Celebrity("","");
+            }
+
+        }
+
+        return matches;
     }
 
     /**
@@ -77,7 +104,9 @@ public class CelebrityGame
      */
     public void addCelebrity(String name, String guess, String type)
     {
-        celebGameList.add(new Celebrity(name, guess));
+        Celebrity currentCelebrity;
+        currentCelebrity = new Celebrity(name, guess);
+        this.celebGameList.add(currentCelebrity);
     }
 
     /**
@@ -87,21 +116,21 @@ public class CelebrityGame
      */
     public boolean validateCelebrity(String name)
     {
-        if(name.trim().length() >= 4)
+        if (name.trim().length() >= 4)
             return true;
         return false;
     }
 
     /**
      * Checks that the supplied clue has at least 10 characters or is a series of clues
-     * This method would be expanded based on your subclass of Celebrity.
+     * This method will be expanded based on your subclass of Celebrity.
      * @param clue The text of the clue(s)
-     * @param type Supports a subclass of Celebrity 
+     * @param type Supports a subclass of Celebrity (LiteratureCelebrity)
      * @return If the clue is valid.
      */
     public boolean validateClue(String clue, String type)
     {
-        if(clue.trim().length() >= 10)
+        if (clue.trim().length() >= 10)
             return true;
         return false;
     }
@@ -113,7 +142,7 @@ public class CelebrityGame
      */
     public int getCelebrityGameSize()
     {
-        return 0;
+        return celebGameList.size();
     }
 
     /**
@@ -124,17 +153,6 @@ public class CelebrityGame
      */
     public String sendClue()
     {
-        return null;
-    }
-
-    /**
-     * Accessor method for the games answer to maintain low coupling between
-     * classes
-     * 
-     * @return The String answer from the current celebrity.
-     */
-    public String sendAnswer()
-    {
-        return null;
+        return gameCelebrity.getClue();
     }
 }
