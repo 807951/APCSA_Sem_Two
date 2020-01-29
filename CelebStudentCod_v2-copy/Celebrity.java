@@ -46,6 +46,7 @@ public class Celebrity
         this.clue = clue;
     }
 
+    /**
      * Updates the answer to the provided String.
      * @param answer The new answer.
      */
