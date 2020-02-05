@@ -29,9 +29,20 @@ public class Deck {
      * @param values is an array containing all of the card point values.
      */
     public Deck(String[] ranks, String[] suits, int[] values) {
-        for(int i = 0; i < 52; i++)
-            cards.add(new Card(ranks[i], suits[i], values[i])); 
-        size = 52;
+        cards = new ArrayList<Card>();
+        size = ranks.length;
+        if(checkArrays(ranks, suits, values) == true)
+            for(int i = 0; i < size; i++)
+                cards.add(new Card(ranks[i], suits[i], values[i])); 
+        shuffle();
+    }
+
+    public boolean checkArrays(String [] ranks, String[] suits, int[] values){
+        if ((ranks.length != suits.length) || (ranks.length != values.length)){
+            System.out.println("You have more elements in 1 or 2 array(s) than the others!"); 
+            return false;
+        }
+        return true;
     }
 
     /**
@@ -39,9 +50,7 @@ public class Deck {
      * @return true if this deck is empty, false otherwise.
      */
     public boolean isEmpty() {
-        if(cards.size() == 0)
-            return true;
-        return false;
+        return cards.size() == 0;
     }
 
     /**
@@ -58,8 +67,9 @@ public class Deck {
      */
     public void shuffle() {
         Random rand = new Random();
-        for(int i = 0; i < 27; i++){
-            int randomIndexToSwap = rand.nextInt(cards.size());
+        size = 52; // put size = 6 to test code
+        for(int i = 0; i < size/2; i++){ 
+            int randomIndexToSwap = rand.nextInt(cards.size() - 1);
             Card temp = cards.get(randomIndexToSwap);
             cards.set(randomIndexToSwap, cards.get(i));
             cards.set(i, temp);
@@ -72,8 +82,8 @@ public class Deck {
      *         previously dealt.
      */
     public Card deal() {
-        --size;
-        return(cards.get(size - 1));
+        size--;
+        return(cards.get(size));
     }
 
     /**
@@ -83,31 +93,24 @@ public class Deck {
     @Override
     public String toString() {
         String rtn = "size = " + size + "\nUndealt cards: \n";
-
         for (int k = size - 1; k >= 0; k--) {
-            rtn = rtn + cards.get(k);
-            if (k != 0) {
-                rtn = rtn + ", ";
-            }
-            if ((size - k) % 2 == 0) {
-                // Insert carriage returns so entire deck is visible on console.
-                rtn = rtn + "\n";
-            }
+            rtn += cards.get(k);
+            if (k != 0)
+                rtn += ", ";
+            if ((size - k) % 2 == 0)
+            // Insert carriage returns so entire deck is visible on console.
+                rtn += "\n";
         }
-
-        rtn = rtn + "\nDealt cards: \n";
+        rtn += "\nDealt cards: \n";
         for (int k = cards.size() - 1; k >= size; k--) {
-            rtn = rtn + cards.get(k);
-            if (k != size) {
-                rtn = rtn + ", ";
-            }
-            if ((k - cards.size()) % 2 == 0) {
-                // Insert carriage returns so entire deck is visible on console.
-                rtn = rtn + "\n";
-            }
+            rtn += cards.get(k);
+            if (k != size)
+                rtn += ", ";
+            if ((k - cards.size()) % 2 == 0)
+            // Insert carriage returns so entire deck is visible on console.
+                rtn += "\n";
         }
-
-        rtn = rtn + "\n";
+        rtn += "\n";
         return rtn;
     }
 }

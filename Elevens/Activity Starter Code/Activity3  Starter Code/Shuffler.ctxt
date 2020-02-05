@@ -1,0 +1,15 @@
+#BlueJ class context
+comment0.target=Shuffler
+comment0.text=\ Author\:\ Arin\ Gadre\r\n\r\n\ This\ class\ contains\ methods\ to\ shuffle\ a\ \r\n\ deck\ of\ cards.\r\n\ answer\ to\ number\ 4\:\r\n\ Pos\:\ 3\r\n\ \ \ Temp\:\ 0\r\n\ \ \ Pos\:\ 0\r\n\ \ \ Temp\:\ 1\r\n\ \ \ Pos\:\ 1\r\n\ \ \ Temp\:\ 2\r\n
+comment1.params=args
+comment1.target=void\ main(java.lang.String[])
+comment2.params=
+comment2.target=java.lang.String\ flip()
+comment3.params=a\ b
+comment3.target=boolean\ arePermutations(int[],\ int[])
+comment4.params=values
+comment4.target=void\ perfectShuffle(int[])
+comment5.params=values
+comment5.target=void\ selectionShuffle(int[])
+comment5.text=\r\n\ Apply\ an\ "efficient\ selection\ shuffle"\ to\ the\ argument.\r\n\ The\ selection\ shuffle\ algorithm\ conceptually\ maintains\ two\ sequences\r\n\ of\ cards\:\ the\ selected\ cards\ (initially\ empty)\ and\ the\ not-yet-selected\r\n\ cards\ (initially\ the\ entire\ deck).\ It\ repeatedly\ does\ the\ following\ until\r\n\ all\ cards\ have\ been\ selected\:\ randomly\ remove\ a\ card\ from\ those\ not\ yet\r\n\ selected\ and\ add\ it\ to\ the\ selected\ cards.\r\n\ An\ efficient\ version\ of\ this\ algorithm\ makes\ use\ of\ arrays\ to\ avoid\r\n\ searching\ for\ an\ as-yet-unselected\ card.\r\n\ @param\ values\ is\ an\ array\ of\ integers\ simulating\ cards\ to\ be\ shuffled.\r\n
+numComments=6
