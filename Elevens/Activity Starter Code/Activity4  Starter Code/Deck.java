@@ -61,13 +61,13 @@ public class Deck {
      */
     public void shuffle() {
         Random rand = new Random();
-        size = 52;
-        for(int i = 0; i < size/2; i++){ 
-            int randomIndexToSwap = rand.nextInt(cards.size() - 1);
+        for(int i = 0; i < cards.size(); i++){ 
+            int randomIndexToSwap = rand.nextInt(cards.size());
             Card temp = cards.get(randomIndexToSwap);
             cards.set(randomIndexToSwap, cards.get(i));
             cards.set(i, temp);
         }
+        size = cards.size();
     }
 
     /**
